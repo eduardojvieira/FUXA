@@ -30,7 +30,7 @@ module.exports = {
                     } else if (tag.scale.mode === 'convertDateTime' && tag.scale.dateTimeFormat) {
                         value = dayjs(value).format(tag.scale.dateTimeFormat);
                     } else if (tag.scale.mode === 'convertTickTime' && tag.scale.dateTimeFormat) {
-                        value = durationToTimeFormat(dayjs.duration(value), tag.scale.dateTimeFormat);
+                        value = dayjs(1000*value).format(tag.scale.dateTimeFormat);
                     }
                 }
                 if (tag.format) {
